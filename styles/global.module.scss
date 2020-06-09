@@ -1,0 +1,21 @@
+$button-height: 40px;
+$mdc-button-disabled-ink-color: "#fff";
+
+@mixin button-base() {
+
+  display: inline-flex;
+  position: relative;
+  height: $button-height;
+  border: none;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: $mdc-button-disabled-ink-color;
+    cursor: default;
+    pointer-events: none;
+  }
+}
