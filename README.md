@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Demo project for [Learn Next.js](https://nextjs.org/learn) showing how you can use it to interact with REST API's.

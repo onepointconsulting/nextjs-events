@@ -1,7 +1,7 @@
 import Layout from '../../components/layout'
 import Head from 'next/head'
 import Date from "../../components/date";
-import {getAllEventIds, getEventData} from "../../lib/events";
+import {getEventData} from "../../lib/events";
 import utilStyles from "../../styles/utils.module.css";
 
 export default function Event({eventData}) {
@@ -19,16 +19,7 @@ export default function Event({eventData}) {
     )
 }
 
-export async function getStaticPaths() {
-    const ids = await getAllEventIds();
-    console.log('eventIds', ids);
-    return {
-        paths: ids,
-        fallback: false
-    }
-}
-
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
     const eventData = await getEventData(params.id);
     console.log('eventData', eventData);
     return {

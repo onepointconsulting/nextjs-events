@@ -40,7 +40,7 @@ export default function Home({allEvents}) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
     const allEvents = await getEvents();
     return {
         props: {
